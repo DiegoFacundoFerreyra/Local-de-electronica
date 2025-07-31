@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-color: black;
+  color: white;
+  padding: 20px;
+
+  text-align: center;
+}
+h1 {
+  font-size: 40px;
+}
+
+.boton-principal {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #4caf50;
+  box-shadow: 4px 4px 2px rgb(200, 197, 197);
+  border: none;
+}
+.boton-principal:hover {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: green;
+  box-shadow: 6px 6px 6px rgb(200, 197, 197);
+  border: none;
+}
+.letras-principal {
+  color: white;
+  text-decoration: none;
+  padding: 2px;
+  font-family: "Bitcount";
+  src: url("./Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf")
+    format("truetype");
+  font-size: 20px;
+}
+
+.nav-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  gap: 12px;
+  padding: 12px;
+  margin: 0px;
+  width: 100%;
+  height: 260px;
+}
+.busqueda {
+  border: 2px solid #4caf50;
+  outline: none;
+}
+.whatsapp {
+  width: 40px;
+  height: 40px;
+  outline: none;
+  position: fixed;
+  bottom: 4px;
+  right: 4px;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: black;
+}
+
+.icono {
+  width: 28px;
+  height: 28px;
+}
+
+.trabaja {
+  text-decoration: none;
+  color: #4caf50;
+}
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(180, 173, 173);
+  width: 90%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: aliceblue;
+  text-shadow: 2px 2px 2px green;
+  border-radius: 12px;
+  height: 140px;
+  margin: 20px;
+  margin-top: 8px;
+}
+.marca {
+  box-shadow: 2px 2px 2px white;
+  width: 80px;
+  height: 80px;
+}
+.div-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 0px;
+  background-color: #c7f4c8;
+}
+
+.img-index {
+  width: 340px;
+  height: 200px;
+}
+.nosotros {
+  width: 90%;
+  height: auto;
+  background-color: aliceblue;
+}
+@media (min-width: 768px) {
+  .nav-principal {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .busqueda {
+    width: 180px;
+    height: 28px;
+  }
+  .letras-principal {
+    font-size: 28px;
+  }
+  h1 {
+    font-size: 52px;
+  }
+  .whatsapp {
+    width: 60px;
+    height: 60px;
+  }
+  footer {
+    width: 100%;
+    height: 80px;
+    background-color: black;
+  }
+  .icono {
+    width: 40px;
+    height: 40px;
+  }
+
+  .trabaja {
+    text-decoration: none;
+    color: #4caf50;
+    font-size: x-large;
+  }
+  .info {
+    flex-direction: row;
+    width: 80%;
+    height: 140px;
+    font-size: large;
+    margin: 88px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+  }
+  .marca {
+    width: 100px;
+    height: 100px;
+  }
+  .div-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-principal {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .letras-principal {
+    font-size: 32px;
+  }
+  .busqueda {
+    width: 200px;
+    height: 40px;
+  }
+  h1 {
+    font-size: 60px;
+  }
+  .whatsapp {
+    width: 60px;
+    height: 60px;
+  }
+  .whatsapp:hover {
+    width: 80px;
+    height: 80px;
+  }
+  footer {
+    width: 100%;
+    height: 80px;
+    background-color: black;
+  }
+  .icono {
+    width: 48px;
+    height: 48px;
+  }
+
+  .trabaja {
+    text-decoration: none;
+    color: #4caf50;
+  }
+  .info {
+    flex-direction: row;
+    width: 90%;
+    height: 140px;
+    font-size: xx-large;
+    margin: 88px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+  }
+  .marca {
+    width: 120px;
+    height: 120px;
+    box-shadow: 4px 4px 2px white;
+  }
+  .div-index {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
