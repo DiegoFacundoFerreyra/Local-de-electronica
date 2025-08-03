@@ -123,9 +123,35 @@ footer {
   height: 200px;
 }
 .nosotros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 90%;
   height: auto;
-  background-color: aliceblue;
+  background-color: rgb(229, 249, 229);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.comercio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: auto;
+  background-color: rgb(229, 249, 229);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.titulo-nosotros {
+  color: green;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+}
+.titulo-comercio {
+  color: green;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
 }
 @media (min-width: 768px) {
   .nav-principal {
