@@ -175,6 +175,10 @@ footer {
   width: 60px;
   height: 40px;
 }
+.derecho {
+  font-size: 8px;
+  color: antiquewhite;
+}
 
 @media (min-width: 768px) {
   .nav-principal {
@@ -256,6 +260,10 @@ footer {
   .boton-buscar {
     width: 48px;
     height: 24px;
+  }
+  .derecho {
+    font-size: 12px;
+    color: antiquewhite;
   }
 }
 
@@ -343,5 +351,9 @@ footer {
   .boton-buscar {
     width: 56px;
     height: 32px;
+  }
+  .derecho {
+    font-size: 16px;
+    color: antiquewhite;
   }
 }
