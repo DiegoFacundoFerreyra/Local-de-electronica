@@ -15,6 +15,101 @@
   </head>
   <body>
     <header class="trabaja">TRABAJA CON NOSOTROS</header>
+    <div class="div-parrafo">
+      <p class="p-trabajo">
+        Una de las tantas ventaja de trabajar con notros, es que el día de tu
+        cumpleaños lo tenes libre. Y esa es una de las tantas que vas a tener...
+      </p>
+    </div>
+    <h3 class="titulo-empleo">Solicitud de empleo</h3>
+    <div class="empleo">
+      <form class="form">
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="Nombre"
+          class="input-trabajo"
+          name="Nombre"
+          title="Nombre"
+          required
+        />
+        <label for="apellido">Apellido:</label>
+        <input
+          type="text"
+          id="Apellido"
+          class="input-trabajo"
+          name="Apellido"
+          title="Apellido"
+          required
+        />
+        <label for="date"> Fecha de nacimiento:</label>
+        <input
+          type="date"
+          id="Fecha de nacimiento"
+          class="input-trabajo"
+          name="Fecha de nacimiento"
+          title="Fecha de nacimiento"
+          required
+        />
+        <label for="telefono"> Telefono: </label>
+        <input
+          type="text"
+          id="Telefono"
+          class="input-trabajo"
+          name="Telefono"
+          title="Telefono"
+          required
+        />
+        <label for="correo"> Correo electronico: </label>
+        <input
+          type="text"
+          id="Correo electronico"
+          class="input-trabajo"
+          name="Correo electronico"
+          title="Correo electronico"
+          required
+        />
+        <label for="direccion"> Direccion: </label>
+        <input
+          type="text"
+          id="Direccion"
+          class="input-trabajo"
+          name="Direccion"
+          title="Direccion"
+          required
+        />
+        <label for="Pretencion salarial">Pretencion salarial:</label>
+        <input
+          type="number"
+          class="input-trabajo"
+          id="Pretencion Salarial"
+          name="Pretencion salarial"
+          min="800000"
+          max="2200000"
+          step="100000"
+        />
+        <label for="mensaje">Mensaje:</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="6"
+          cols="40"
+          placeholder="Describite brevemente de manera personal. Gustos, hobbies, habilidades."
+          required
+        ></textarea>
+
+        <label for="file">Adjunta tu CV:</label>
+        <input
+          class="file-input"
+          type="file"
+          id="file"
+          name="archivo"
+          accept=".pdf, .doc, .docx"
+          required
+        />
+        <button class="submit-input" type="submit">Enviar solicitud</button>
+      </form>
+    </div>
     <button>
       <a href="https://wa.me/3416820135">
         <img src="../IMAGES/whatsapp.png" class="whatsapp" alt="whatsapp" />
