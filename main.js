@@ -56,3 +56,55 @@ y los bloques se ejecutan}
 if (10 > 5) {ejecuta lo de aca adentro solo si es TRUE, si es FALSE no ejecuto, en este caso,
 10 es mayor que 5 asique lo ejecutaria, en caso que fuese menor, seria false y ahi no ejecutaria.}
 else if (MUESTRA SI LA SOLUCION NO SE CUMPLE)*/
+
+/*EJEMPLOS*/
+dineroDiego = prompt("cuanto dinero tenes Diego?");
+dineroDiego = parseInt(dineroDiego);
+
+if (dineroDiego >= 0.5 && dineroDiego < 1) {
+  alert("No te alcanza para nada");
+} else if (dineroDiego >= 2 && dineroDiego < 3) {
+  alert("Igual estas croto");
+} else if (dineroDiego >= 4 && dineroDiego < 5) {
+  alert("Estas menos croto");
+} else if (dineroDiego >= 6 && dineroDiego < 7) {
+  alert("Casi");
+} else if (dineroDiego >= 8) {
+  alert("La tenes toda chinguenguencha");
+} else {
+  alert("Tito, estas debajo de un puente");
+}
+
+dineroFerreyra = prompt("cuanto dinero tenes Ferreyra?");
+dineroDiego = parseInt(dineroFerreyra);
+
+if (dineroFerreyra >= 0.5 && dineroFerreyra < 1) {
+  alert("No te alcanza para nada");
+} else if (dineroFerreyra >= 2 && dineroFerreyra < 3) {
+  alert("Igual estas croto");
+} else if (dineroFerreyra >= 4 && dineroFerreyra < 5) {
+  alert("Estas menos croto");
+} else if (dineroFerreyra >= 6 && dineroFerreyra < 7) {
+  alert("Casi");
+} else if (dineroFerreyra >= 8) {
+  alert("La tenes toda chinguenguencha");
+} else {
+  alert("Tito, estas debajo de un puente");
+}
+
+dineroFacundo = prompt("cuanto dinero Facundo?");
+dineroDiego = parseInt(dineroFacundo);
+
+if (dineroFacundo >= 0.5 && dineroFacundo < 1) {
+  alert("No te alcanza para nada");
+} else if (dineroFacundo >= 2 && dineroFacundo < 3) {
+  alert("Igual estas croto");
+} else if (dineroFacundo >= 4 && dineroFacundo < 5) {
+  alert("Estas menos croto");
+} else if (dineroFacundo >= 6 && dineroFacundo < 7) {
+  alert("Casi");
+} else if (dineroFacundo >= 8) {
+  alert("La tenes toda chinguenguencha");
+} else {
+  alert("Tito, estas debajo de un puente");
+}
