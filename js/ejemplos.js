@@ -1,5 +1,5 @@
-/* let nombre = prompt("Nombre"); */
-/* let apellido = prompt("Apellido");
+/*  let nombre = prompt("Nombre"); 
+let apellido = prompt("Apellido");
 let fechaDeNacimiento = prompt("Fecha de nacimiento");
 let dNI = prompt("DNI");
 let dirección = prompt("Dirección");
@@ -7,17 +7,17 @@ let ciudad = prompt("Ciudad");
 let teléfono = prompt("Teléfono");
 let correoeElectrónico = prompt("Correo electrónico");
 let usuario = prompt("Usuario");
-let contraseña = prompt("Contraseña"); */
-/* alert("Bienvenido " + nombre); */
+let contraseña = prompt("Contraseña"); 
+ alert("Bienvenido " + nombre); 
 
-/* 12 ES UN NUMERO Y "12" ES UN TEXTO/* 
+ 12 ES UN NUMERO Y "12" ES UN TEXTO
 
-/* numero1 = 10;
+ numero1 = 10;
 numero2 = 8;
 resultado = numero1 + numero2;
-alert(resultado); */
+alert(resultado); 
 
-/* OPERADORES DE COMPARACION
+/OPERADORES DE COMPARACION
 (verdadero o falso)
 = asigna
 == compara pero no diferencia si es un texto o un numero
@@ -27,27 +27,27 @@ alert(resultado); */
 numero1 <= nuermo2 (menor o igual)
 numero1 >= numero2 (mayor o igual)
 numero1 < numero2 (menor que)
-numero2 > numero2 (mayor que)*/
+numero2 > numero2 (mayor que)
 
-/* let numero1 = 24;
+ let numero1 = 24;
 let numero2 = 14;
-alert(numero1 == numero2); FALSE*/
+alert(numero1 == numero2); FALSE
 
-/* let numero1 = 8;
+ let numero1 = 8;
 let numero2 = 22;
-alert(numero1 != numero2) TRUE; */
+alert(numero1 != numero2) TRUE; 
 
-/* let numero1 = 22;
+ let numero1 = 22;
 let numero2 = 33;
 let resultado = numero1 == numero2;
-alert(resultado); */
+alert(resultado); 
 
-/*OPERADORES LOGICOS
+OPERADORES LOGICOS
 && si 1 sola de 2 es false devuelve false 
 || si 1 de las 2 es verdadera, devuelve verdadera
-! me devuelve lo contrario de lo que hay a continuacion (! va en el parentecis del resultado)*/
+! me devuelve lo contrario de lo que hay a continuacion (! va en el parentecis del resultado)
 
-/*CONDICIONALES
+CONDICIONALES
 IF = si esta condicion se cumple (ESTE ES EL PRIMERO Y ES 1 SOLO)
 ELSE IF = si no, vamos a ver si esta otra condicion se cumple (ESTE VA ENTRE EL "IF" Y EL "ELSE" Y PODEMOS PONER TODOS LOS QUE QUERRAMOS)
 ELSE = si no se ejecuto ninguno de los anteriores, muestra este. (ESTE ES EL ULTIMO Y ESE 1 SOLO)
@@ -55,27 +55,11 @@ ELSE = si no se ejecuto ninguno de los anteriores, muestra este. (ESTE ES EL ULT
 y los bloques se ejecutan}
 if (10 > 5) {ejecuta lo de aca adentro solo si es TRUE, si es FALSE no ejecuto, en este caso,
 10 es mayor que 5 asique lo ejecutaria, en caso que fuese menor, seria false y ahi no ejecutaria.}
-else if (MUESTRA SI LA SOLUCION NO SE CUMPLE)*/
+else if (MUESTRA SI LA SOLUCION NO SE CUMPLE)
+ */
 
-/*EJEMPLOS*/
-dineroDiego = prompt("cuanto dinero tenes Diego?");
-dineroDiego = parseInt(dineroDiego);
-
-if (dineroDiego >= 0.5 && dineroDiego < 1) {
-  alert("No te alcanza para nada");
-} else if (dineroDiego >= 2 && dineroDiego < 3) {
-  alert("Igual estas croto");
-} else if (dineroDiego >= 4 && dineroDiego < 5) {
-  alert("Estas menos croto");
-} else if (dineroDiego >= 6 && dineroDiego < 7) {
-  alert("Casi");
-} else if (dineroDiego >= 8) {
-  alert("La tenes toda chinguenguencha");
-} else {
-  alert("Tito, estas debajo de un puente");
-}
-
-dineroFerreyra = prompt("cuanto dinero tenes Ferreyra?");
+/* TERMINARLO CON DALTO */
+/* dineroFerreyra = prompt("cuanto dinero tenes Ferreyra?");
 dineroDiego = parseInt(dineroFerreyra);
 
 if (dineroFerreyra >= 0.5 && dineroFerreyra < 1) {
@@ -108,3 +92,24 @@ if (dineroFacundo >= 0.5 && dineroFacundo < 1) {
 } else {
   alert("Tito, estas debajo de un puente");
 }
+
+ESTO NO ME SALIO!!!!! SIGUE INSISTIENDO CON EL NOMNRE, NO SE SI O TOMA LOS BRAKE O EL PROBLEMA ESTA EN OTRO LADO!!!!!
+  let entrada = prompt("Ingrese su nomnbre");
+while (entrada != "ESC") {
+  switch (entrada) {
+    case "WALY":
+      alert("Hola WALY");
+      break;
+     case "FER":
+      alert("Hola FER");
+      break;
+    case "FACU":
+      alert("Hola FACU");
+      break; 
+    default:
+      alert("QUEIN SOS");
+      break;
+  }
+  entrada = prompt("Ingrese su nombre");
+}
+ */
