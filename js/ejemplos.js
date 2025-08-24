@@ -113,3 +113,45 @@ while (entrada != "ESC") {
   entrada = prompt("Ingrese su nombre");
 }
  */
+
+/* let nombreUsuario = prompt("Ingresar usuario");
+if (nombreUsuario == "") {
+  alert("No ingresaste nombre de usuario");
+} else {
+  alert("Bienvenido " + nombreUsuario);
+}
+ */
+
+/*CONTADOR DENTRO DE UN BUCLE "FOR"*/
+/* for (let i = 1; i <= 10; i++) {
+  if (i == 1) {
+    alert(i + " Celular");
+  } else {
+    alert(i + " Celulares");
+  }
+} */
+
+/* BUCLE WHILE */
+/* let c = 1;
+while (c <= 10) {
+  if (c == 1) {
+    alert(c + " Celular");
+  } else {
+    alert(c + " Celulares");
+  }
+  c++;
+} */
+/*ANOTACION IMPORTANTE: TRATAR DE USAR SIEMPPRE EL FOT ANTES QUE EL WHILE.*/
+
+/*A CONTINUACION UN EJEMPLO DE NUMEROS QUE SI O SI TIENEN QUE SER NUMEROS*/
+/* let anio = parseInt(prompt("Ingrese su edad"));
+if (isNaN(anio)) {
+  alert("No ingresaste un numero");
+} else {
+  let tieneDNI = confirm("Tenes DNI?");
+  if (tieneDNI && anio >= 18) {
+    alert("Sos mayor de edad, podes entrar");
+  } else {
+    alert("No podes entrar!!");
+  }
+} */
