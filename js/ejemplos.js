@@ -155,3 +155,32 @@ if (isNaN(anio)) {
     alert("No podes entrar!!");
   }
 } */
+
+/*ARRAYS SE GUARDA DENTRO LA PALABRA PREDENTERMINADA, SE USAN [], CADA PALABRA VA CON " UNIVIDUALES Y SE SEPARAN CON UNA ,*/
+/* intercontinentales = ["1978", "2000", "2003"];
+document.write(intercontinentales[0]);
+document.write(intercontinentales[1]);
+document.write(intercontinentales[2]); */
+/* PARA SABER CUANTOS ELEMENTOS TIENE UN ARRAY, SE USA .LENGTH */
+/* SE PUEDE MOSTRAR EL LA PALABRA QUE NOSOTROS QUERRAMOS ENCERRADA ENTRE CORCHETES EL NUMERO DE LA PALABRA SIGUIENDO EL ORDEN EN EL QUE ESTA ESCRITA, COMENZANDO CON EL 0.*/
+
+/*ARRAYS ASOCIATIVOS, SE USAN {} Y CADA PALABRA VA SIN " Y SEPARADAS POR ,*/
+/* let vehiculo = {
+  marca: "Peugeot",
+  modelo: "207",
+  anio: 2014,
+  color: "Blanco",
+  km: 126000,
+  motor: "1.4",
+  combustible: "Nafta",
+  caja: "Manual",
+};
+
+alert(vehiculo["marca"]);
+alert(vehiculo["modelo"]);
+alert(vehiculo["anio"]);
+alert(vehiculo["color"]);
+alert(vehiculo["km"]);
+alert(vehiculo["motor"]);
+alert(vehiculo["combustible"]);
+alert(vehiculo["caja"]); */
