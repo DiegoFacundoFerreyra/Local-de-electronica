@@ -1,10 +1,10 @@
-let resp = confirm("¿Desea usar la calculadora?");
+/* let resp = confirm("¿Desea usar la calculadora?");
 if (resp) {
   while (resp) {
+    let numero1 = parseFloat(prompt("Ingrese el primer número"));
     let operacion = prompt(
       "Ingrese la operación que desea realizar (+, -, *, /)"
     );
-    let numero1 = parseFloat(prompt("Ingrese el primer número"));
     let numero2 = parseFloat(prompt("Ingrese el segundo número"));
     let resultado = 0;
 
@@ -58,3 +58,4 @@ if (resp) {
     resp = confirm("¿Desea realizar otra operación?");
   }
 }
+ */
