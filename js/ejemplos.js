@@ -176,14 +176,39 @@ document.write(intercontinentales[2]); */
   caja: "Manual",
 };
 
-alert(vehiculo["marca"]);
-alert(vehiculo["modelo"]);
-alert(vehiculo["anio"]);
-alert(vehiculo["color"]);
-alert(vehiculo["km"]);
-alert(vehiculo["motor"]);
-alert(vehiculo["combustible"]);
-alert(vehiculo["caja"]); */
+let marca = vehiculo["marca"];
+let modelo = vehiculo["modelo"];
+let anio = vehiculo["anio"];
+let color = vehiculo["color"];
+let km = vehiculo["km"];
+let motor = vehiculo["motor"];
+let combustible = vehiculo["combustible"];
+let caja = vehiculo["caja"];
+ */
+/*UNA FORMA DE HACERLO
+frase =
+  "El auto es un " +
+  marca +
+  " " +
+  modelo +
+  " del año " +
+  anio +
+  "color " +
+  color +
+  " y tiene " +
+  km +
+  "km" +
+  " motor " +
+  motor +
+  " y funciona a " +
+  combustible +
+  " y tiene caja " +
+  caja;
+document.write(frase); */
+
+/*OTRA FORMA DE HACERLO*/
+/* frase = `El auto es un ${marca} ${modelo} <br> del año ${anio} <br> color ${color} <br> y tiene ${km} km <br> con un motor ${motor} <br> que funciona a ${combustible} <br> y tiene caja ${caja} <br>`;
+document.write(frase); */
 
 /*let resp = confirm("¿Desea usar la calculadora?");
 if (resp) {
