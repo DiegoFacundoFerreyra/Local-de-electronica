@@ -1,4 +1,4 @@
-/*  let nombre = prompt("Nombre"); 
+let nombre = prompt("Nombre"); 
 let apellido = prompt("Apellido");
 let fechaDeNacimiento = prompt("Fecha de nacimiento");
 let dNI = prompt("DNI");
@@ -17,7 +17,7 @@ numero2 = 8;
 resultado = numero1 + numero2;
 alert(resultado); 
 
-/OPERADORES DE COMPARACION
+//OPERADORES DE COMPARACION
 (verdadero o falso)
 = asigna
 == compara pero no diferencia si es un texto o un numero
@@ -42,12 +42,12 @@ let numero2 = 33;
 let resultado = numero1 == numero2;
 alert(resultado); 
 
-OPERADORES LOGICOS
+//OPERADORES LOGICOS
 && si 1 sola de 2 es false devuelve false 
 || si 1 de las 2 es verdadera, devuelve verdadera
 ! me devuelve lo contrario de lo que hay a continuacion (! va en el parentecis del resultado)
 
-CONDICIONALES
+//CONDICIONALES
 IF = si esta condicion se cumple (ESTE ES EL PRIMERO Y ES 1 SOLO)
 ELSE IF = si no, vamos a ver si esta otra condicion se cumple (ESTE VA ENTRE EL "IF" Y EL "ELSE" Y PODEMOS PONER TODOS LOS QUE QUERRAMOS)
 ELSE = si no se ejecuto ninguno de los anteriores, muestra este. (ESTE ES EL ULTIMO Y ESE 1 SOLO)
@@ -56,10 +56,10 @@ y los bloques se ejecutan}
 if (10 > 5) {ejecuta lo de aca adentro solo si es TRUE, si es FALSE no ejecuto, en este caso,
 10 es mayor que 5 asique lo ejecutaria, en caso que fuese menor, seria false y ahi no ejecutaria.}
 else if (MUESTRA SI LA SOLUCION NO SE CUMPLE)
- */
+else {si no se cumple ninguna de las anteriores, ejecuta esto.}
 
 /* TERMINARLO CON DALTO */
-/* dineroFerreyra = prompt("cuanto dinero tenes Ferreyra?");
+dineroFerreyra = prompt("cuanto dinero tenes Ferreyra?");
 dineroDiego = parseInt(dineroFerreyra);
 
 if (dineroFerreyra >= 0.5 && dineroFerreyra < 1) {
@@ -112,27 +112,28 @@ while (entrada != "ESC") {
   }
   entrada = prompt("Ingrese su nombre");
 }
- */
 
-/* let nombreUsuario = prompt("Ingresar usuario");
+//EJEMPLO DE USO DE PROMPT, ALERT Y CONFIRM
+
+ let nombreUsuario = prompt("Ingresar usuario");
 if (nombreUsuario == "") {
   alert("No ingresaste nombre de usuario");
 } else {
   alert("Bienvenido " + nombreUsuario);
 }
- */
+ 
 
-/*CONTADOR DENTRO DE UN BUCLE "FOR"*/
-/* for (let i = 1; i <= 10; i++) {
+//CONTADOR DENTRO DE UN BUCLE "FOR"
+ for (let i = 1; i <= 10; i++) {
   if (i == 1) {
     alert(i + " Celular");
   } else {
     alert(i + " Celulares");
   }
-} */
+} 
 
-/* BUCLE WHILE */
-/* let c = 1;
+// BUCLE WHILE 
+ let c = 1;
 while (c <= 10) {
   if (c == 1) {
     alert(c + " Celular");
@@ -140,11 +141,11 @@ while (c <= 10) {
     alert(c + " Celulares");
   }
   c++;
-} */
-/*ANOTACION IMPORTANTE: TRATAR DE USAR SIEMPPRE EL FOT ANTES QUE EL WHILE.*/
+} 
+//ANOTACION IMPORTANTE: TRATAR DE USAR SIEMPPRE EL FOR ANTES QUE EL WHILE.
 
-/*A CONTINUACION UN EJEMPLO DE NUMEROS QUE SI O SI TIENEN QUE SER NUMEROS*/
-/* let anio = parseInt(prompt("Ingrese su edad"));
+//A CONTINUACION UN EJEMPLO DE NUMEROS QUE SI O SI TIENEN QUE SER NUMEROS
+ let anio = parseInt(prompt("Ingrese su edad"));
 if (isNaN(anio)) {
   alert("No ingresaste un numero");
 } else {
@@ -154,18 +155,18 @@ if (isNaN(anio)) {
   } else {
     alert("No podes entrar!!");
   }
-} */
+} 
 
-/*ARRAYS SE GUARDA DENTRO LA PALABRA PREDENTERMINADA, SE USAN [], CADA PALABRA VA CON " UNIVIDUALES Y SE SEPARAN CON UNA ,*/
-/* intercontinentales = ["1978", "2000", "2003"];
+//ARRAYS SE GUARDA DENTRO LA PALABRA PREDENTERMINADA, SE USAN [], CADA PALABRA VA CON " UNIVIDUALES Y SE SEPARAN CON UNA ,
+ intercontinentales = ["1978", "2000", "2003"];
 document.write(intercontinentales[0]);
 document.write(intercontinentales[1]);
-document.write(intercontinentales[2]); */
-/* PARA SABER CUANTOS ELEMENTOS TIENE UN ARRAY, SE USA .LENGTH */
-/* SE PUEDE MOSTRAR EL LA PALABRA QUE NOSOTROS QUERRAMOS ENCERRADA ENTRE CORCHETES EL NUMERO DE LA PALABRA SIGUIENDO EL ORDEN EN EL QUE ESTA ESCRITA, COMENZANDO CON EL 0.*/
+document.write(intercontinentales[2]); 
+// PARA SABER CUANTOS ELEMENTOS TIENE UN ARRAY, SE USA .LENGTH 
+// SE PUEDE MOSTRAR EL LA PALABRA QUE NOSOTROS QUERRAMOS ENCERRADA ENTRE CORCHETES EL NUMERO DE LA PALABRA SIGUIENDO EL ORDEN EN EL QUE ESTA ESCRITA, COMENZANDO CON EL 0.
 
 /*ARRAYS ASOCIATIVOS, SE USAN {} Y CADA PALABRA VA SIN " Y SEPARADAS POR ,*/
-/* let vehiculo = {
+let vehiculo = {
   marca: "Peugeot",
   modelo: "207",
   anio: 2014,
@@ -184,8 +185,10 @@ let km = vehiculo["km"];
 let motor = vehiculo["motor"];
 let combustible = vehiculo["combustible"];
 let caja = vehiculo["caja"];
- */
-/*UNA FORMA DE HACERLO
+  
+
+//CALCULADORA
+//UNA FORMA DE HACERLO
 frase =
   "El auto es un " +
   marca +
@@ -204,13 +207,20 @@ frase =
   combustible +
   " y tiene caja " +
   caja;
-document.write(frase); */
+document.write(frase);
 
 /*OTRA FORMA DE HACERLO*/
-/* frase = `El auto es un ${marca} ${modelo} <br> del año ${anio} <br> color ${color} <br> y tiene ${km} km <br> con un motor ${motor} <br> que funciona a ${combustible} <br> y tiene caja ${caja} <br>`;
-document.write(frase); */
+ frase = `El auto es un ${marca} ${modelo} <br> del año ${anio} <br> color ${color} <br> y tiene ${km} km <br> con un motor ${motor} <br> que funciona a ${combustible} <br> y tiene caja ${caja} <br>`;
+document.write(frase); 
 
-/*let resp = confirm("¿Desea usar la calculadora?");
+
+/*FUNCIONES*/
+ function saludar() {
+  let nombre = prompt("Ingrese su nombre");
+  alert("Bienvenido " + nombre);
+}
+saludar(); 
+let resp = confirm("¿Desea usar la calculadora?");
 if (resp) {
   while (resp) {
     let numero1 = parseFloat(prompt("Ingrese el primer número"));
@@ -269,7 +279,7 @@ if (resp) {
     }
     resp = confirm("¿Desea realizar otra operación?");
   }
-}*/
+}
 
 /*PROBABLEMENTE ESTE MAL NO SE DONDE PONER EL MSJ*/
 
@@ -349,3 +359,45 @@ function iniciarCarrito() {
     }
   }
 }
+
+//ORDENAR UN ARRAY DE OBJETOS POR PRECIO
+//FORMA DE HACERLO DE MENOR A MAYOR
+function ordenarPorPrecio() {
+  arregloBicis.sort((a, b) => a.getPrecio() - b.getPrecio());
+  alert("Las bicicletas ordenadas por precio son: \n" + mostrarStock());
+}
+
+//FORMA DE HACERLO DE MAYOR A MENOR
+ function ordenarPorPrecio() {
+  arregloBicis.sort((a, b) => b.getPrecio() - a.getPrecio());
+  alert("Las bicicletas ordenadas por precio son: \n" + mostrarStock());
+} 
+
+//ORDENAR UN ARRAY DE OBJETOS POR ORDEN ALFABETICO
+ const ordenAlfabetico = [
+  { nombre: "diego", apellido: "ferreyra" },
+  { nombre: "juan", apellido: "perez" },
+  { nombre: "ana", apellido: "gomez" },
+  { nombre: "maria", apellido: "lopez" },
+  { nombre: "carlos", apellido: "sanchez" },
+];
+
+//POR APELLIDO
+ ordenAlfabetico.sort((a, b) => {
+  const apellidoA = a.apellido.toLowerCase();
+  const apellidoB = b.apellido.toLowerCase();
+  if (apellidoA < apellidoB) return -1;
+  if (apellidoA > apellidoB) return 1;
+  return 0;
+});
+console.log(ordenAlfabetico); 
+
+//POR NOMBRE
+ordenAlfabetico.sort((a, b) => {
+  const nombreA = a.nombre.toLowerCase();
+  const nombreB = b.nombre.toLowerCase();
+  if (nombreA < nombreB) return -1;
+  if (nombreA > nombreB) return 1;
+  return 0;
+});
+console.log(ordenAlfabetico);

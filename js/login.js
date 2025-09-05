@@ -4,80 +4,73 @@ const pass = "Alos3yalos5";
 solicitarDatos();
 
 function solicitarDatos() {
-  let usuario = prompt("Ingrese su usuario");
-  let contraseña = prompt("Ingrese su contraseña");
-
+  let usuario = prompt("Ingrese su nombre de usuario:");
+  let contraseña = prompt("Ingrese su contraseña:");
+  if (usuario === null || contraseña === null) {
+    alert("Usuario o contraseña incorrectos");
+    return;
+  } else {
+    alert("Bienvenido " + usuario);
+  }
   let mensaje = validarDatos(usuario, contraseña);
   if (mensaje == "") {
     iniciarCarrito();
-  } else {
-    alert(mensaje);
   }
 }
 
 function iniciarCarrito() {
   let lista = "";
   let finalizarCompra = false;
+
   while (!finalizarCompra) {
     let codigo = prompt("Ingrese el producto");
-    let producto = obtenerProducto(codigo);
-
+    let cantidad = parseInt(prompt("Ingrese la cantidad"));
+    let producto = "obtenerProducto"(codigo);
     if (producto) {
-      lista += "\n -" + producto;
+      lista += cantidad + " " + producto + "\n";
     } else {
-      if (codigo === null) {
+      if (codigo === "null") {
         finalizarCompra = true;
       } else {
         alert("Producto no encontrado");
       }
     }
     if (lista !== "") {
-      let respuesta = confirm("¿Desea finalizar la compra? " + lista);
-      if (respuesta) {
-        alert("Usted compró" + lista);
-        alert("Gracias por elegirnos");
-        finalizarCompra = true;
-      }
+      let resp = confirm("¿Desea finalizar la compra? " + "\n" + lista);
+    }
+    if (resp) {
+      finalizarCompra = true;
+      alert("Usted comró: " + "\n" + lista);
+      alert("Gracias por su compra");
     }
   }
-}
-function obtenerProducto(codigo) {
-  let producto;
-  switch (codigo) {
-    case "1":
-      producto = "Iphone14";
-      break;
-    case "2":
-      producto = "Samsung S23";
-      break;
-    case "3":
-      producto = "Xiaomi 13";
-      break;
-    case "4":
-      producto = "Motorola G32";
-      break;
-    default:
-      producto = false;
-      break;
-  }
-  return producto;
-}
-/**
- *  @param {*} usuario
- *  @param {*} contraseña
- * @returns
- */
 
-function validarDatos(usuario, contraseña) {
-  let mensaje = "";
-  if (!usuario) {
-    mensaje = "El usuario no puede estar vacio .";
+  function obtenerProducto(codigo) {
+    let producto;
+    switch (codigo) {
+      case "1":
+        producto = "Iphone14";
+        break;
+      case "2":
+        producto = "Samsung S23";
+        break;
+      case "3":
+        producto = "Xiaomi 13";
+        break;
+      default:
+        producto = false;
+        break;
+    }
+    return producto;
   }
-  if (!contraseña) {
-    mensaje += "\n La contraseña no puede estar vacia .";
+
+  function validarDatos(usuario, contraseña) {
+    if (usuario === user && contraseña === pass) {
+      alert("Bienvenido " + usuario);
+      return true;
+    } else {
+      alert("Usuario o contraseña incorrectos");
+      return false;
+    }
   }
-  if (usuario !== user || contraseña !== pass) {
-    mensaje += "\nUsuario o contraseña incorrectos";
-  }
-  return mensaje;
 }
