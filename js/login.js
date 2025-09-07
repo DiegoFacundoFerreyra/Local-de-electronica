@@ -55,6 +55,9 @@ function obtenerProducto(codigo) {
     case "3":
       producto = "Xiaomi 13";
       break;
+    case "4":
+      producto = "Motorola G72";
+      break;
     default:
       producto = false;
       break;

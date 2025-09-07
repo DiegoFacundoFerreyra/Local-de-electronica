@@ -132,6 +132,21 @@ if (nombreUsuario == "") {
   }
 } 
 
+//FOR IN (MUESTRA LA POSICION DE CADA ELEMENTO DEL ARRAY)
+  let intercontinentales = ["1978", "2000", "2003"];
+for (copas in intercontinentales) {
+  console.log(copas);
+  //MUESTRA 0, 1, 2 (LA POSICION DE CADA ELEMENTO DEL ARRAY)
+}
+
+//FOR OF (MUESTRA EL CONTENIDO DE CADA ELEMENTO DEL ARRAY)
+let intercontinentales = ["1978", "2000", "2003"];
+for (copas of intercontinentales) {
+  console.log(copas);
+  //MUESTRA 1978, 2000, 2003 (EL CONTENIDO DE CADA ELEMENTO DEL ARRAY)
+}
+
+
 // BUCLE WHILE 
  let c = 1;
 while (c <= 10) {
@@ -142,7 +157,10 @@ while (c <= 10) {
   }
   c++;
 } 
-//ANOTACION IMPORTANTE: TRATAR DE USAR SIEMPPRE EL FOR ANTES QUE EL WHILE.
+//ANOTACION IMPORTANTE:
+//EL BUCLE WHILE, SIEMPRE QUE SE CUMPLA LA CONDICION, VA A SEGUIR EJECUTANDOSE, POR ESO ES IMPORTANTE PONER UN CONTADOR (c++) PARA QUE CUENTE Y LLEGUE HASTA DONDE QUEREMOS, SINO, SIEMPRE VA A SER TRUE Y NUNCA VA A TERMINAR.
+//EL BUCLE FOR, YA TIENE EL CONTADOR INCLUIDO, POR ESO NO HACE FALTA PONERLO. LO QUE SIFGNIFICA QUE YA ESTA DETERMINADO CUANDO VA A TERMINAR.
+//CONCLUCION, ES MAS FACIL HACERLO CON FOR, PERO HAY VECES QUE NO SE PUEDE, POR ESO ESTA EL WHILE. ASIQUE PRIMERA OPCION, SIEMPRE EL FOR 
 
 //A CONTINUACION UN EJEMPLO DE NUMEROS QUE SI O SI TIENEN QUE SER NUMEROS
  let anio = parseInt(prompt("Ingrese su edad"));
@@ -165,7 +183,7 @@ document.write(intercontinentales[2]);
 // PARA SABER CUANTOS ELEMENTOS TIENE UN ARRAY, SE USA .LENGTH 
 // SE PUEDE MOSTRAR EL LA PALABRA QUE NOSOTROS QUERRAMOS ENCERRADA ENTRE CORCHETES EL NUMERO DE LA PALABRA SIGUIENDO EL ORDEN EN EL QUE ESTA ESCRITA, COMENZANDO CON EL 0.
 
-/*ARRAYS ASOCIATIVOS, SE USAN {} Y CADA PALABRA VA SIN " Y SEPARADAS POR ,*/
+//ARRAYS ASOCIATIVOS, SE USAN {} Y CADA PALABRA VA SIN " Y SEPARADAS POR 
 let vehiculo = {
   marca: "Peugeot",
   modelo: "207",
@@ -214,7 +232,7 @@ document.write(frase);
 document.write(frase); 
 
 
-/*FUNCIONES*/
+//FUNCIONES EN ESTE CASO, ENTRE OTRAS, CALCULADORA Y SALUDO
  function saludar() {
   let nombre = prompt("Ingrese su nombre");
   alert("Bienvenido " + nombre);
@@ -281,84 +299,6 @@ if (resp) {
   }
 }
 
-/*PROBABLEMENTE ESTE MAL NO SE DONDE PONER EL MSJ*/
-
-const user = "Palermo";
-const pass = "Alos3yalos5";
-
-solicitarDatos();
-
-function solicitarDatos() {
-  let usuario = prompt("Ingrese su nombre de usuario:");
-  let contraseña = prompt("Ingrese su contraseña:");
-  if (usuario === null || contraseña === null) {
-    alert("Usuario o contraseña incorrectos");
-    return;
-  } else {
-    alert("Bienvenido " + usuario);
-  }
-  let mensaje = validarDatos(usuario, contraseña);
-  if (mensaje == "") {
-    iniciarCarrito();
-  }
-}
-
-function iniciarCarrito() {
-  let lista = "";
-  let finalizarCompra = false;
-
-  while (!finalizarCompra) {
-    let codigo = prompt("Ingrese el producto");
-    let cantidad = parseInt(prompt("Ingrese la cantidad"));
-    let producto = "obtenerProducto"(codigo);
-    if (producto) {
-      lista += cantidad + " " + producto + "\n";
-    } else {
-      if (codigo === "null") {
-        finalizarCompra = true;
-      } else {
-        alert("Producto no encontrado");
-      }
-    }
-    if (lista !== "") {
-      let resp = confirm("¿Desea finalizar la compra? " + "\n" + lista);
-    }
-    if (resp) {
-      finalizarCompra = true;
-      alert("Usted comró: " + "\n" + lista);
-      alert("Gracias por su compra");
-    }
-  }
-
-  function obtenerProducto(codigo) {
-    let producto;
-    switch (codigo) {
-      case "1":
-        producto = "Iphone14";
-        break;
-      case "2":
-        producto = "Samsung S23";
-        break;
-      case "3":
-        producto = "Xiaomi 13";
-        break;
-      default:
-        producto = false;
-        break;
-    }
-    return producto;
-  }
-
-  function validarDatos(usuario, contraseña) {
-    if (usuario === user && contraseña === pass) {
-      alert("Bienvenido " + usuario);
-      return true;
-    } else {
-      alert("Usuario o contraseña incorrectos");
-      return false;
-    }
-  }
-}
 
 //ORDENAR UN ARRAY DE OBJETOS POR PRECIO
 //FORMA DE HACERLO DE MENOR A MAYOR
@@ -401,3 +341,4 @@ ordenAlfabetico.sort((a, b) => {
   return 0;
 });
 console.log(ordenAlfabetico);
+
