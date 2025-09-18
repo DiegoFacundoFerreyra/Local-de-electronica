@@ -1,103 +1,33 @@
-solicitarDatos();
-
-/**
- * funcion que solicita datos al usuario
- */
-function solicitarDatos() {
-  let usuario = prompt("Ingrese su usuario");
-  let pass = prompt("Ingrese su contraseña");
-
-  let mensaje = validarDatos(usuario, pass);
-  if (mensaje == "") {
-    iniciarCarrito();
-  } else {
-    console.log(mensaje);
-    alert(mensaje);
-  }
-}
-
-function iniciarCarrito() {
-  let lista = "";
-  let finalizar_carrito = false;
-
-  while (!finalizar_carrito) {
-    let cod = prompt("Ingrese codigo de producto:");
-
-    let producto = obtenerProducto(cod);
-
-    if (producto) {
-      lista += "\n -" + producto;
-    } else {
-      if (cod === null) {
-        finalizar_carrito = true;
-      } else {
-        alert("Ingrese un codigo de producto valido");
-      }
-    }
-
-    if (lista != "") {
-      let resp = confirm("Desea concretar la compra de " + lista);
-
-      if (resp) {
-        alert("Usted compro" + lista);
-        alert("Gracias por comprar en nuestra tienda");
-        finalizar_carrito = true;
-      }
-    }
-  }
-}
-
 function obtenerProducto(codigo) {
   let producto;
-
   switch (codigo) {
     case "1":
-      producto = "Carne";
+      producto = "IPhone 14";
       break;
-
     case "2":
-      producto = "Pollo";
+      producto = "IPhone 15";
       break;
-
     case "3":
-      producto = "Zapallo";
+      producto = "IPhone 16";
       break;
-
     case "4":
-      producto = "Detergente";
+      producto = "IPhone 16 Pro Max";
       break;
-
     case "5":
-      producto = "Jabon de Tocador";
+      producto = "Samsung S22";
       break;
-
+    case "6":
+      producto = "Samsung S22 Ultra";
+      break;
+    case "7":
+      producto = "Samsung S23";
+      break;
+    case "8":
+      producto = "Samsung S23 Ultra";
+      break;
     default:
       producto = false;
+      break;
   }
-
   return producto;
-}
-
-/**
- *
- * @param {*} usuario
- * @param {*} pass
- * @returns
- */
-function validarDatos(usuario, pass) {
-  let mensaje = "";
-
-  if (!usuario) {
-    mensaje = "Es necesario ingresar un usuario .";
-  }
-
-  if (!pass) {
-    mensaje += "\n Es necesario ingresar un password .";
-  }
-
-  if (usuario != user || pass != pass_comprador) {
-    mensaje += "\nUsuario y/o pass incorrecto";
-  }
-
-  return mensaje;
 }
