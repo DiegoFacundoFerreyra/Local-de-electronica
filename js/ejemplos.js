@@ -93,7 +93,6 @@ if (dineroFacundo >= 0.5 && dineroFacundo < 1) {
   alert("Tito, estas debajo de un puente");
 }
 
-ESTO NO ME SALIO!!!!! SIGUE INSISTIENDO CON EL NOMNRE, NO SE SI O TOMA LOS BRAKE O EL PROBLEMA ESTA EN OTRO LADO!!!!!
   let entrada = prompt("Ingrese su nomnbre");
 while (entrada != "ESC") {
   switch (entrada) {
@@ -340,5 +339,443 @@ ordenAlfabetico.sort((a, b) => {
   if (nombreA > nombreB) return 1;
   return 0;
 });
+<<<<<<< HEAD
 console.log(ordenAlfabetico);
 
+=======
+
+console.log(ordenAlfabetico);
+
+console.log(ordenAlfabetico);
+
+//EJEMPLO DEL PROFESOR PARA LOGIN Y CARRITO. FUNCIONA PERFECTO
+
+const user = "Palermo";
+const pass = "Alos3yalos5";
+
+solicitarDatos();
+
+function solicitarDatos() {
+  let usuario = prompt("Ingrese su nombre de usuario:");
+  let contraseña = prompt("Ingrese su contraseña:");
+
+  let mensaje = validarDatos(usuario, contraseña);
+  if (mensaje == "") iniciarCarrito();
+  else {
+    alert(mensaje);
+  }
+}
+
+function iniciarCarrito() {
+  let lista = "";
+  let finalizarCompra = false;
+
+  while (!finalizarCompra) {
+    let codigo = prompt("Ingrese el producto");
+    //let cantidad = parseInt(prompt("Ingrese la cantidad"));
+    let producto = obtenerProducto(codigo);
+    if (producto) {
+      lista += "\n -" + producto;
+    } else {
+      if (codigo === null) {
+        finalizarCompra = true;
+      } else {
+        alert("Producto no encontrado");
+      }
+    }
+    if (lista != "") {
+      let resp = confirm("¿Desea finalizar la compra? " + lista);
+
+      if (resp) {
+        alert("Usted compró: " + lista);
+        alert("Gracias por elegirnos");
+        finalizarCompra = true;
+      }
+    }
+  }
+}
+
+function obtenerProducto(codigo) {
+  let producto;
+  switch (codigo) {
+    case "1":
+      producto = "Iphone14";
+      break;
+    case "2":
+      producto = "Samsung S23";
+      break;
+    case "3":
+      producto = "Xiaomi 13";
+      break;
+    case "4":
+      producto = "Motorola G72";
+      break;
+    default:
+      producto = false;
+      break;
+  }
+  return producto;
+}
+
+/**
+ *
+ * @param {*} usuario
+ * @param {*} contraseña
+ * @returns
+ */
+
+function validarDatos(usuario, contraseña) {
+  let mensaje = "";
+  if (!usuario) {
+    mensaje = "El usuario no existe";
+  }
+  if (!contraseña) {
+    mensaje += "\n La contraseña no es correcta";
+  }
+  if (usuario != user || contraseña != pass) {
+    mensaje += "\n Usuario o contraseña incorrectos";
+  }
+  return mensaje;
+}
+
+
+//ESTO ESTA EN EL JS DE PRODUCTOS
+
+class Auto {
+    /**
+     * Constructor
+     * @param {*} modelo del auto
+     * @param {*} marca del auto
+     * @param {*} precio  del auto
+     */
+    constructor(modelo, marca, precio) {
+        this.modelo = modelo;
+        this.marca = marca;
+        this.precio = precio;
+        this.id = -1;
+    }
+    /**
+  * Muestra la descripcion completa del auto     
+  */
+    mostrar_descripcion() {
+        return (this.id + " - " + this.modelo + " - " + this.marca + " - $" + this.precio);
+    }
+    /**
+ * Setea un nuevo id
+ * @param {*} nuevo_id a setear
+ */
+    set_id(nuevo_id) {
+        this.id = nuevo_id;
+    }
+}
+
+//MIENTRAS QUE ESTO ESTA EN EL MAIN
+
+let arreglo_autos = new Array();
+let gen_id = 1;
+const hoy = new Date();
+alert("Bienvenid@s al sistena de compra/venta \n" + hoy.toLocaleString());
+let flag = true;
+while (flag) {
+    let mensaje = "Indique lo que desea hacer: ";
+    mensaje += "\n1) Cargar nuevo auto ";
+    mensaje += "\n2) Eliminar auto ";
+    mensaje += "\n3) Mostrar Autos en stock ";
+    mensaje += "\n4) Aplicar descuento ";
+    mensaje += "\n5) Salir ";
+
+    let resp = prompt(mensaje);
+    switch (resp) {
+        case "1":
+            ingresar_nuevo_auto();
+            break;
+        case "2":
+            eliminar_auto();
+            break;
+        case "3":
+            mostrar_autos();
+            break;
+        case "4":
+            aplicar_descuento();
+            break;
+        case "5":
+            alert("Gracias por utilizar nuestra pagina :) ");
+            flag = false;
+            break;
+        case null:
+            alert("Gracias por utilizar nuestra pagina :) ");
+            flag = false;
+            break;
+        default:
+            alert("No ingreso una opcion valida");
+    }
+}
+
+
+function solicitar_datos_auto() {
+
+    let check = true;
+    while (check) {
+        let msj = "";
+        let marca = prompt("Ingrese marca").trim();
+        let modelo = prompt("ingrese modelo").trim();
+        let precio = parseFloat(prompt("Ingrese precio"));
+        if (!marca) {
+            msj += "\nDebe ingresar marca";
+        }
+        if (!modelo) {
+            msj += "\nDebe ingresar modelo";
+        }
+        if (isNaN(precio)) {
+            msj += "\nDebe ingresar un valor numerico en precio";
+        }
+        if (msj != "") {
+            alert(msj);
+            check = confirm("Deseas cargar de nuevo los datos");
+        } else {
+            return new Auto(marca, modelo, precio);
+        }
+    }
+}
+
+function ingresar_nuevo_auto() {
+
+    let auto = solicitar_datos_auto();
+    if (auto) {
+        auto.set_id(gen_id);
+        gen_id++;
+        arreglo_autos.push(auto);
+        alert("Auto agregado con exito");
+    }
+}
+
+function eliminar_auto() {
+
+    if (existen_autos()) {
+        mostrar_autos();
+        let id_ingresado = prompt("Ingrese el id del auto a eliminar").trim();
+        if (id_ingresado) {
+            let auto_encontrado = arreglo_autos.find((a) => a.id == id_ingresado);
+            if (auto_encontrado) {
+                arreglo_autos = arreglo_autos.filter((a) => a.id != id_ingresado);
+                alert("Auto elimanado con exito");
+            }
+        }
+    }
+}
+
+function existen_autos() {
+
+    if (arreglo_autos.length == 0) {
+        alert("No hay autos en stock");
+        return false;
+    }
+    return true;
+}
+function mostrar_autos() {
+
+    if (existen_autos) {
+        let resp = prompt("La info se mostrara ordenada por precio.\n Desea verla en forma Ascendente (A) o Desendente (D)").toUpperCase() ;
+        if (resp == "A" ){
+            arreglo_autos.sort((a,b)=>{
+                if (a.precio > b.precio){
+                    return 1 ;
+                }
+                if (a.precio < b.precio){
+                    return -1
+                }
+                return 0 ;
+            })
+        }
+        if (resp == "D" ){
+            arreglo_autos.sort((a,b)=>{
+                if (a.precio > b.precio){
+                    return -1 ;
+                }
+                if (a.precio < b.precio){
+                    return 1
+                }
+                return 0 ;
+            })
+        } 
+        mostrar_arreglo();
+    }
+}
+function  mostrar_arreglo(){
+    let mensaje = "Los autos en stock son";  
+    arreglo_autos.forEach( (auto)=> {
+        mensaje += "\n " + auto.mostrar_descripcion();
+    })
+    alert(mensaje);    
+}
+
+function aplicar_descuento() {
+
+    if (existen_autos) {
+        let descuento = parseInt(prompt("Ingrese el descuento a aplicar"));
+        if (!isNaN(descuento)) {
+            let desc = 1 - (descuento / 100);
+            arreglo_autos = arreglo_autos.map((aut) => {
+                return {
+                    modelo: aut.modelo,
+                    marca: aut.marca,                    
+                    precio: aut.precio * desc,
+                    id: aut.id     
+                }
+            })
+        }
+        arreglo_autos = recuperar_coleccion_bjetos();
+        mostrar_arreglo();
+    }
+}
+function recuperar_coleccion_bjetos(){
+
+    let coleccion_auxiliar = new Array();
+    arreglo_autos.forEach( (auto)=> {
+        let a = new Auto (auto.modelo,auto.marca,auto.precio);
+        a.set_id(auto.id);
+        coleccion_auxiliar.push(a);
+    });
+    return coleccion_auxiliar;
+}
+
+
+//ESTO FUNCIONA EXCELENTE Y ES UN MENU ANTES DE ABRIR MAS MENUS
+
+* Clase que modela y define las bicicletas */
+class Bicis {
+  /**
+   *
+   * @param {*} id
+   * @param {*} clase
+   * @param {*} rodado
+   * @param {*} precio
+   */
+
+  constructor(id, clase, rodado, precio) {
+    this.id = id;
+    this.clase = clase;
+    this.rodado = rodado;
+    this.precio = precio;
+  }
+  /*FUNCION PARA MOSTRAR LA DESCRIPCION COMPLETA DE LA BICI */
+  /**
+   *
+   * @returns
+   */
+  mostrarDescripcionCompleta() {
+    return (
+      "#" +
+      this.id +
+      " - " +
+      this.clase +
+      " Rodado: " +
+      this.rodado +
+      " $ " +
+      this.precio
+    );
+  }
+
+  getId() {
+    return this.id;
+  }
+  setId(nuevo_id) {
+    this.id = nuevo_id;
+  }
+  getClase() {
+    return this.clase;
+  }
+  setClase(nueva_clase) {
+    this.clase = nueva_clase;
+  }
+  getRodado() {
+    return this.rodado;
+  }
+  setRodado(nuevo_rodado) {
+    this.rodado = nuevo_rodado;
+  }
+  getPrecio() {
+    return this.precio;
+  }
+  setPrecio(nuevo_precio) {
+    this.precio = nuevo_precio;
+  }
+}
+
+//BASE DE DATOS DE LAS BIBICLETAS
+const arregloBicis = new Array();
+arregloBicis.push(new Bicis(1, "Carrera", 29, 500000));
+arregloBicis.push(new Bicis(2, "Montaña", 28, 420000));
+arregloBicis.push(new Bicis(3, "Paseo", 26, 280000));
+arregloBicis.push(new Bicis(4, "Playera", 26, 200000));
+arregloBicis.push(new Bicis(5, "Niños", 16, 150000));
+arregloBicis.push(new Bicis(6, "Plegable", 20, 340000));
+let respuesta = true;
+
+// SI NO FUNCA, CABMBIAR EL 4 DE ABAJO POR SALIR
+while (respuesta != "4" && respuesta) {
+  respuesta = mostrarMenu();
+}
+
+function mostrarMenu() {
+  let respuesta = prompt(
+    "Elija una opcion: \n 1) Ver las bicicletas \n 2) Asignar nuevo precio \n 3) Ordenar por precio \n 4) Salir"
+  );
+  if (respuesta == "1") {
+    alert("Las bicicletas son: \n " + mostrarStock());
+  } else if (respuesta == "2") {
+    actualizarPrecio();
+  } else if (respuesta == "3") {
+    ordenarPorPrecio();
+  } else if (respuesta.toLocaleLowerCase() == "4") {
+    return respuesta.toLowerCase();
+  } else {
+    alert("Opcion invalida");
+  }
+  return respuesta;
+}
+
+function buscarBici(id) {
+  let i = 0;
+  while (i < arregloBicis.length) {
+    if (arregloBicis[i].getId() == id) {
+      return i;
+    }
+    i++;
+  }
+  return -1;
+}
+
+function mostrarStock() {
+  let stock = "";
+  for (const b of arregloBicis) {
+    stock += b.mostrarDescripcionCompleta() + "\n";
+  }
+  return stock;
+}
+
+//FORMA DE HACERLO DE MENOR A MAYOR
+function ordenarPorPrecio() {
+  arregloBicis.sort((a, b) => a.getPrecio() - b.getPrecio());
+  alert("Las bicicletas ordenadas por precio son: \n" + mostrarStock());
+}
+
+//FORMA DE HACERLO DE MAYOR A MENOR
+/* function ordenarPorPrecio() {
+  arregloBicis.sort((a, b) => b.getPrecio() - a.getPrecio());
+  alert("Las bicicletas ordenadas por precio son: \n" + mostrarStock());
+} */
+
+function actualizarPrecio() {
+  let bici = prompt("Ingrese la bicicleta a actualizar");
+  let indice = buscarBici(bici);
+  if (indice >= 0) {
+    let nuevo_precio = prompt("Ingrese un nuevo precio");
+    arregloBicis[indice].setPrecio(nuevo_precio);
+    alert("Ahora la lista es: \n" + mostrarStock());
+  } else {
+    alert("No ingresaste una bicicleta en stock");
+  }
+}
+>>>>>>> Stashed changes
+>>>>>>> desarrollo
