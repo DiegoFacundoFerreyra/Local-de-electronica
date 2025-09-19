@@ -1,4 +1,3 @@
-//lo unico que cambia en tables es camara por pantalla
 class Celulares {
   /**
    * @param {*} marca
