@@ -833,4 +833,123 @@ function actualizarPrecio() {
     alert("No ingresaste una bicicleta en stock");
   }
 }
->>>>>>> Stashed changes
+// LO QUE HICE YO MISMO
+function mostrarMenu() {
+  let opcion;
+  switch (opcion) {
+    case "1":
+      opcion = "Celulares y tablets";
+      break;
+    case "2":
+      opcion = "Dispositivos de almacenamiento";
+      break;
+    default:
+      opcion = false;
+      break;
+  }
+  return opcion;
+}
+let respuesta = prompt(
+  "Elija una opcion: \n 1) Ver las bicicletas \n 2) Asignar nuevo precio"
+);
+if (respuesta == "1") {
+  alert("Los celulares son: \n" + obtenerCelular());
+} else if (respuesta == "2") {
+  alert("Los productos de almacenamiento son: \n" + obtenerMemoria());
+}
+return respuesta;
+
+function obtenerCelular(codigo) {
+  let celular;
+  switch (codigo) {
+    case "1":
+      celular = "IPhone 14";
+      break;
+    case "2":
+      celular = "IPhone 15";
+      break;
+    case "3":
+      celular = "IPhone 16";
+      break;
+    case "4":
+      celular = "IPhone 16 Pro Max";
+      break;
+    case "5":
+      celular = "Samsung S22";
+      break;
+    case "6":
+      celular = "Samsung S22 Ultra";
+      break;
+    case "7":
+      celular = "Samsung S23";
+      break;
+    case "8":
+      celular = "Samsung S23 Ultra";
+      break;
+    default:
+      celular = false;
+      break;
+  }
+  return celular;
+}
+
+let codigo = prompt(
+  "Elige un celular:\n" +
+    "1 - IPhone 14\n" +
+    "2 - IPhone 15\n" +
+    "3 - IPhone 16\n" +
+    "4 - IPhone 16 Pro Max\n" +
+    "5 - Samsung S22\n" +
+    "6 - Samsung S22 Ultra\n" +
+    "7 - Samsung S23\n" +
+    "8 - Samsung S23 Ultra"
+);
+
+let celular = obtenerCelular(codigo);
+
+if (celular) {
+  alert("Seleccionaste: " + celular);
+} else {
+  alert("Código inválido ❌");
+}
+alert("Usted compró " + celular);
+
+function obtenerMemoria(numero) {
+  let memoria;
+  switch (numero) {
+    case "1":
+      memoria = "Pen Drive de 32GB";
+      break;
+    case "2":
+      memoria = "Pen Drive de 64GB";
+      break;
+    case "3":
+      memoria = "Disco externo de 500GB";
+      break;
+    case "4":
+      memoria = "Disco externo de 1TB";
+      break;
+    default:
+      memoria = false;
+      break;
+  }
+  return memoria;
+}
+
+let numero = prompt(
+  "Elige un producto de almacenamiento:\n" +
+    "1 - Pen drive de 32GB\n" +
+    "2 - Pen drive de 64GB\n" +
+    "3 - Disco externo de 500GB\n" +
+    "4 - Disco externo de 1TB\n"
+);
+
+let memoria = obtenerMemoria(numero);
+
+if (memoria) {
+  alert("Seleccionaste: " + memoria);
+} else {
+  alert("Código inválido ❌");
+}
+alert("Usted compró " + memoria);
+
