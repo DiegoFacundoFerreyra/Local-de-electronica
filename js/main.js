@@ -26,7 +26,11 @@ function mostrarMenu() {
             "5 - Samsung S22\n" +
             "6 - Samsung S22 Ultra\n" +
             "7 - Samsung S23\n" +
-            "8 - Samsung S23 Ultra"
+            "8 - Samsung S23 Ultra\n" +
+            "9 - Xiaomi Readmi Pad SE\n" +
+            "10 - IPad 11\n" +
+            "11 - Samsung Tab S10\n" +
+            "12 - Motorola Pad 60 pro\n"
         );
         producto = obtenerCelular(codigo);
         break;
@@ -37,7 +41,9 @@ function mostrarMenu() {
             "1 - Pen Drive de 32GB\n" +
             "2 - Pen Drive de 64GB\n" +
             "3 - Disco externo de 500GB\n" +
-            "4 - Disco externo de 1TB"
+            "4 - Disco externo de 1TB\n" +
+            "5 - Fundas para celulares\n" +
+            "6 - Fundas para tablets\n"
         );
         producto = obtenerMemoria(numero);
         break;
@@ -56,6 +62,34 @@ function mostrarMenu() {
         break;
 
       case "4":
+        let reloj = prompt(
+          "1 - SmartWatch Motorola\n" +
+            "2 - SmartWatch Samsung\n" +
+            "3 - SmartWatch Xioami\n" +
+            "4 - SmartWatch Apple\n" +
+            "5 - Cargador para celulares\n" +
+            "6 - Cargador para tablets\n" +
+            "7 - Cargador inalambrico\n" +
+            "8 - Cargador portatil\n"
+        );
+        producto = obtenerWatch(reloj);
+        break;
+
+      case "5":
+        let nuevos = promt(
+          "1 - Celulares\n" +
+            "2 - Tablets\n" +
+            "3 - Smartwhatches\n" +
+            "4 - Cargadores\n" +
+            "5 - Parlates\n" +
+            "6 - Auriculares\n" +
+            "7 - Almacenamiento\n" +
+            "8 - Fundas\n"
+        );
+        producto = obstenerNuevo(nuevos);
+        break;
+
+      case "6":
         alert("¡Gracias por su visita! 👋");
         salir = true;
         break;
@@ -109,6 +143,14 @@ function obtenerCelular(codigo) {
       return "Samsung S23";
     case "8":
       return "Samsung S23 Ultra";
+    case "9":
+      return "Xiaomi Readmi Pad SE";
+    case "10":
+      return "IPad 11";
+    case "11":
+      return "Samsung Tab S10";
+    case "12":
+      return "Motorola Pad 60 pro";
     default:
       return false;
   }
@@ -143,6 +185,52 @@ function obtenerAudio(sonido) {
       return "Parlante bluetooth de 28 watts";
     case "6":
       return "Barra de sonido de 40 watts";
+    default:
+      return false;
+  }
+}
+
+function obtenerWatch(reloj) {
+  switch (reloj) {
+    case "1":
+      return "SmartWatch Motorola";
+    case "2":
+      return "SmartWatch Samsung";
+    case "3":
+      return "SmartWatch Xioami";
+    case "4":
+      return "SmartWatch Apple";
+    case "5":
+      return "Cargador para celulares";
+    case "6":
+      return "Cargador para tablets";
+    case "7":
+      return "Cargador inalambrico";
+    case "8":
+      return "Cargador portatil";
+    default:
+      return false;
+  }
+}
+
+function obstenerNuevo(nuevos) {
+  switch (nuevos) {
+    case "1":
+      return "Celulares";
+    case "2":
+      return "Tablets";
+    case "3":
+      return "Smartwhatches";
+    case "4":
+      return "Cargadores";
+    case "5":
+      return "Parlates";
+    case "6":
+      return "Auriculares";
+    case "7":
+      return "Almacenamiento";
+    case "8":
+      "Fundas";
     default:
       return false;
   }
