@@ -833,109 +833,102 @@ function actualizarPrecio() {
     alert("No ingresaste una bicicleta en stock");
   }
 }
+<<<<<<< Updated upstream
 // LO QUE HICE YO MISMO
+=======
+
+
+//ESTO ES SIN BUCLE, PROBABLEMENTE NO SIRVA MAS QUE COMO EJEMPLO
+>>>>>>> Stashed changes
 function mostrarMenu() {
-  let opcion;
-  switch (opcion) {
-    case "1":
-      opcion = "Celulares y tablets";
-      break;
-    case "2":
-      opcion = "Dispositivos de almacenamiento";
-      break;
-    default:
-      opcion = false;
-      break;
+  let respuesta = prompt(
+    "Elija una opción:\n" +
+      "1) Ver celulares\n" +
+      "2) Ver dispositivos de almacenamiento"
+  );
+
+  if (respuesta === "1") {
+    let codigo = prompt(
+      "Elige un celular:\n" +
+        "1 - IPhone 14\n" +
+        "2 - IPhone 15\n" +
+        "3 - IPhone 16\n" +
+        "4 - IPhone 16 Pro Max\n" +
+        "5 - Samsung S22\n" +
+        "6 - Samsung S22 Ultra\n" +
+        "7 - Samsung S23\n" +
+        "8 - Samsung S23 Ultra"
+    );
+
+    let celular = obtenerCelular(codigo);
+
+    if (celular) {
+      alert("Seleccionaste: " + celular);
+      alert("Usted compró " + celular);
+    } else {
+      alert("Código inválido ❌");
+    }
+  } else if (respuesta === "2") {
+    let numero = prompt(
+      "Elige un producto de almacenamiento:\n" +
+        "1 - Pen Drive de 32GB\n" +
+        "2 - Pen Drive de 64GB\n" +
+        "3 - Disco externo de 500GB\n" +
+        "4 - Disco externo de 1TB"
+    );
+
+    let memoria = obtenerMemoria(numero);
+
+    if (memoria) {
+      alert("Seleccionaste: " + memoria);
+      alert("Usted compró " + memoria);
+    } else {
+      alert("Código inválido ❌");
+    }
+  } else {
+    alert("Opción no válida ❌");
   }
-  return opcion;
 }
-let respuesta = prompt(
-  "Elija una opcion: \n 1) Ver las bicicletas \n 2) Asignar nuevo precio"
-);
-if (respuesta == "1") {
-  alert("Los celulares son: \n" + obtenerCelular());
-} else if (respuesta == "2") {
-  alert("Los productos de almacenamiento son: \n" + obtenerMemoria());
-}
-return respuesta;
 
 function obtenerCelular(codigo) {
-  let celular;
   switch (codigo) {
     case "1":
-      celular = "IPhone 14";
-      break;
+      return "IPhone 14";
     case "2":
-      celular = "IPhone 15";
-      break;
+      return "IPhone 15";
     case "3":
-      celular = "IPhone 16";
-      break;
+      return "IPhone 16";
     case "4":
-      celular = "IPhone 16 Pro Max";
-      break;
+      return "IPhone 16 Pro Max";
     case "5":
-      celular = "Samsung S22";
-      break;
+      return "Samsung S22";
     case "6":
-      celular = "Samsung S22 Ultra";
-      break;
+      return "Samsung S22 Ultra";
     case "7":
-      celular = "Samsung S23";
-      break;
+      return "Samsung S23";
     case "8":
-      celular = "Samsung S23 Ultra";
-      break;
+      return "Samsung S23 Ultra";
     default:
-      celular = false;
-      break;
+      return false;
   }
-  return celular;
 }
-
-let codigo = prompt(
-  "Elige un celular:\n" +
-    "1 - IPhone 14\n" +
-    "2 - IPhone 15\n" +
-    "3 - IPhone 16\n" +
-    "4 - IPhone 16 Pro Max\n" +
-    "5 - Samsung S22\n" +
-    "6 - Samsung S22 Ultra\n" +
-    "7 - Samsung S23\n" +
-    "8 - Samsung S23 Ultra"
-);
-
-let celular = obtenerCelular(codigo);
-
-if (celular) {
-  alert("Seleccionaste: " + celular);
-} else {
-  alert("Código inválido ❌");
-}
-alert("Usted compró " + celular);
 
 function obtenerMemoria(numero) {
-  let memoria;
   switch (numero) {
     case "1":
-      memoria = "Pen Drive de 32GB";
-      break;
+      return "Pen Drive de 32GB";
     case "2":
-      memoria = "Pen Drive de 64GB";
-      break;
+      return "Pen Drive de 64GB";
     case "3":
-      memoria = "Disco externo de 500GB";
-      break;
+      return "Disco externo de 500GB";
     case "4":
-      memoria = "Disco externo de 1TB";
-      break;
+      return "Disco externo de 1TB";
     default:
-      memoria = false;
-      break;
+      return false;
   }
-  return memoria;
 }
 
+<<<<<<< Updated upstream
 let numero = prompt(
   "Elige un producto de almacenamiento:\n" +
     "1 - Pen drive de 32GB\n" +
@@ -953,3 +946,6 @@ if (memoria) {
 }
 alert("Usted compró " + memoria);
 
+=======
+mostrarMenu();
+>>>>>>> Stashed changes
