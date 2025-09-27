@@ -130,6 +130,12 @@ footer {
   color: antiquewhite;
 }
 
+.resultado {
+  display: flex;
+  justify-content: center;
+  color: green;
+}
+
 @media (min-width: 768px) {
   .whatsapp {
     width: 60px;

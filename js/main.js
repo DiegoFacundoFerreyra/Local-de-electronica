@@ -18,7 +18,7 @@ function mostrarMenu() {
     switch (respuesta) {
       case "1":
         let codigo = prompt(
-          "Elige un celular:\n" +
+          "Elige un celular o tablet:\n" +
             "1 - IPhone 14\n" +
             "2 - IPhone 15\n" +
             "3 - IPhone 16\n" +
@@ -37,7 +37,7 @@ function mostrarMenu() {
 
       case "2":
         let numero = prompt(
-          "Elige un producto de almacenamiento:\n" +
+          "Elige un producto de almacenamiento o funda:\n" +
             "1 - Pen Drive de 32GB\n" +
             "2 - Pen Drive de 64GB\n" +
             "3 - Disco externo de 500GB\n" +
@@ -65,28 +65,28 @@ function mostrarMenu() {
         let reloj = prompt(
           "1 - SmartWatch Motorola\n" +
             "2 - SmartWatch Samsung\n" +
-            "3 - SmartWatch Xioami\n" +
+            "3 - SmartWatch Xiaomi\n" +
             "4 - SmartWatch Apple\n" +
             "5 - Cargador para celulares\n" +
             "6 - Cargador para tablets\n" +
-            "7 - Cargador inalambrico\n" +
-            "8 - Cargador portatil\n"
+            "7 - Cargador inalámbrico\n" +
+            "8 - Cargador portátil\n"
         );
         producto = obtenerWatch(reloj);
         break;
 
       case "5":
-        let nuevos = promt(
+        let nuevos = prompt(
           "1 - Celulares\n" +
             "2 - Tablets\n" +
-            "3 - Smartwhatches\n" +
+            "3 - Smartwatches\n" +
             "4 - Cargadores\n" +
-            "5 - Parlates\n" +
+            "5 - Parlantes\n" +
             "6 - Auriculares\n" +
             "7 - Almacenamiento\n" +
             "8 - Fundas\n"
         );
-        producto = obstenerNuevo(nuevos);
+        producto = obtenerNuevo(nuevos);
         break;
 
       case "6":
@@ -166,6 +166,10 @@ function obtenerMemoria(numero) {
       return "Disco externo de 500GB";
     case "4":
       return "Disco externo de 1TB";
+    case "5":
+      return "Funda para celulares";
+    case "6":
+      return "Funda para tablets";
     default:
       return false;
   }
@@ -197,7 +201,7 @@ function obtenerWatch(reloj) {
     case "2":
       return "SmartWatch Samsung";
     case "3":
-      return "SmartWatch Xioami";
+      return "SmartWatch Xiaomi";
     case "4":
       return "SmartWatch Apple";
     case "5":
@@ -205,36 +209,46 @@ function obtenerWatch(reloj) {
     case "6":
       return "Cargador para tablets";
     case "7":
-      return "Cargador inalambrico";
+      return "Cargador inalámbrico";
     case "8":
-      return "Cargador portatil";
+      return "Cargador portátil";
     default:
       return false;
   }
 }
 
-function obstenerNuevo(nuevos) {
+function obtenerNuevo(nuevos) {
   switch (nuevos) {
     case "1":
       return "Celulares";
     case "2":
       return "Tablets";
     case "3":
-      return "Smartwhatches";
+      return "Smartwatches";
     case "4":
       return "Cargadores";
     case "5":
-      return "Parlates";
+      return "Parlantes";
     case "6":
       return "Auriculares";
     case "7":
       return "Almacenamiento";
     case "8":
-      "Fundas";
+      return "Fundas";
     default:
       return false;
   }
 }
 
-// Inicia el programa
-mostrarMenu();
+const botones = document.querySelectorAll(".comprar");
+
+botones.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const contenedor = boton.closest(".foto-producto");
+    const resultado = contenedor.querySelector(".resultado");
+
+    resultado.textContent = "¡Producto agregado al carrito!";
+
+    boton.style.display = "none";
+  });
+});

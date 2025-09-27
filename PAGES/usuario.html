@@ -15,22 +15,33 @@
         type="text"
         name="usuario"
         placeholder="Usuario"
-        value=""
+        required
       />
       <input
         class="login"
         type="password"
         name="contraseña"
         placeholder="Contraseña"
-        value=""
+        required
       />
-      <input class="botoncito" type="submit" value="Ingresar" name="" />
+      <input class="botoncito" type="submit" value="Ingresar" />
       <p>
         <a class="olvidaste" href="../PAGES/formulario.html"
           >¿Olvidaste tu contraseña?</a
         >
       </p>
     </section>
-    <script src="../js/login.js"></script>
+
+    <!--    ESTO NO SE SI VA A ACA O EN LA HOJA DE JS -->
+    <!--  <script>
+      const usuarioActivo = localStorage.getItem("usuarioActivo");
+      if (!usuarioActivo) {
+        // Si no hay usuario logueado, vuelve al login
+        window.location.href = "../PAGES/login.html";
+      } else {
+        console.log("Bienvenido " + usuarioActivo);
+      }
+    </script> -->
+    <script src="../js/main.js"></script>
   </body>
 </html>

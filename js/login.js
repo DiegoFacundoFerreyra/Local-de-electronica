@@ -1,120 +1,123 @@
-const user = "Palermo";
-const pass = "Alos3yalos5";
+//ESTE ES EL CODIGO COMPLETO E INCLUYE LA FUNCION DE REGISTRAR USUARIO
 
-solicitarDatos();
+// ✅ Lista de usuarios registrados
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [
+  { user: "Palermo", pass: "Alos3yalos5" },
+  { user: "Juan", pass: "1234" },
+  { user: "Maria", pass: "abcd" },
+];
 
-function solicitarDatos() {
-  let usuario = prompt("Ingrese su nombre de usuario:");
-  let contraseña = prompt("Ingrese su contraseña:");
+//CAPTURAMOS EL FORMULARIO
+const formLogin = document.getElementById("formLogin");
+
+//Evita que recargue la pagina
+formLogin.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let usuario = document.getElementById("usuario").value.trim();
+  let contraseña = document.getElementById("contraseña").value.trim();
 
   let mensaje = validarDatos(usuario, contraseña);
-  if (mensaje == "") iniciarCarrito();
-  else {
-    if (usuario === null || contraseña === null) {
-      alert("Debe ingresar usuario y contraseña");
-      return;
-    }
 
-    let mensaje = validarDatos(usuario, contraseña);
+  if (mensaje === "") {
+    //  Solo si es correcto pasa al menú de compras
+    alert("Bienvenido " + usuario);
+    mostrarMenu(); // tu función del carrito/menú
+  } else if (mensaje === "Usuario no registrado") {
+    // 👉 Si el usuario no existe, preguntar si quiere registrarse
+    let opcion = confirm(
+      "El usuario no está registrado. ¿Desea crear una cuenta?"
+    );
 
-    if (mensaje === "") {
-      alert("Bienvenido " + usuario);
-      iniciarCarrito();
+    if (opcion) {
+      registrarUsuario(usuario, contraseña);
+      alert("✅ Usuario registrado con éxito. Ahora puede ingresar.");
+      solicitarDatos(); // vuelve a pedir login
     } else {
-      alert(mensaje);
+      alert("❌ No podrá acceder sin una cuenta.");
     }
+  } else {
+    // ❌ Contraseña incorrecta u otro error
+    alert(mensaje);
   }
+});
 
-  /**
-   * Valida usuario y contraseña
-   * @param {string} usuario
-   * @param {string} contraseña
-   * @returns {string} mensaje de error o "" si es válido
-   */
-  function validarDatos(usuario, contraseña) {
-    if (usuario !== user) {
-      return "Usuario incorrecto";
-    }
-    if (contraseña !== pass) {
-      return "Contraseña incorrecta";
-    }
-    return ""; // todo bien
-  }
+/**
+ * Valida usuario y contraseña en el array
+ */
+function validarDatos(usuario, contraseña) {
+  let user = usuarios.find((u) => u.user === usuario);
 
-  /**
-   * Simulación de inicio de carrito
-   */
-  function iniciarCarrito() {
-    let lista = "";
-    let finalizarCompra = false;
-
-    while (!finalizarCompra) {
-      let codigo = prompt("Ingrese el producto");
-      //let cantidad = parseInt(prompt("Ingrese la cantidad"));
-      let producto = obtenerProducto(codigo);
-      if (producto) {
-        lista += "\n -" + producto;
-      } else {
-        if (codigo === null) {
-          finalizarCompra = true;
-        } else {
-          alert("Producto no encontrado");
-        }
-      }
-      if (lista != "") {
-        let resp = confirm("¿Desea finalizar la compra? " + lista);
-
-        if (resp) {
-          alert("Usted compró: " + lista);
-          alert("Gracias por elegirnos");
-          finalizarCompra = true;
-        }
-      }
-    }
-
-    alert("Accediste al carrito de compras 🛒");
-  }
-
-  function obtenerProducto(codigo) {
-    let producto;
-    switch (codigo) {
-      case "1":
-        producto = "Iphone14";
-        break;
-      case "2":
-        producto = "Samsung S23";
-        break;
-      case "3":
-        producto = "Xiaomi 13";
-        break;
-      case "4":
-        producto = "Motorola G72";
-        break;
-      default:
-        producto = false;
-        break;
-    }
-    return producto;
-  }
-
-  /**
-   *
-   * @param {*} usuario
-   * @param {*} contraseña
-   * @returns
-   */
-
-  function validarDatos(usuario, contraseña) {
-    let mensaje = "";
-    if (!usuario) {
-      mensaje = "El usuario no existe";
-    }
-    if (!contraseña) {
-      mensaje += "\n La contraseña no es correcta";
-    }
-    if (usuario != user || contraseña != pass) {
-      mensaje += "\n Usuario o contraseña incorrectos";
-    }
-    return mensaje;
-  }
+  if (!user) return "Debe ingresar un usuario";
+  if (user.pass != contraseña) return "Contraseña incorrecta";
+  return "";
 }
+
+//REGISTRAR USUARIO Y GUARDARDO EN LOCALSTORAGE
+function registrarUsuario(usuario, contraseña) {
+  usuarios.push({ user: usuario, pass: contraseña });
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  console.log(usuarios); // para verificar en consola
+}
+
+// Simulación de menú (para pruebas)
+function mostrarMenu() {
+  alert("👉 Accediste al menú de compras 🛒");
+}
+
+/* // Lista de usuarios (podés extenderla o guardarla en localStorage)
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [
+  { user: "Palermo", pass: "Alos3yalos5" },
+  { user: "Juan", pass: "1234" },
+  { user: "Maria", pass: "abcd" },
+];
+
+const formLogin = document.getElementById("formLogin");
+
+formLogin.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let usuario = document.getElementById("usuario").value.trim();
+  let contraseña = document.getElementById("contraseña").value.trim();
+
+  let mensaje = validarDatos(usuario, contraseña);
+
+  if (mensaje === "") {
+    alert("✅ Bienvenido " + usuario);
+
+    // Guardamos usuario logueado
+    localStorage.setItem("usuarioActivo", usuario);
+
+    // Redirigimos al catálogo
+    window.location.href = "../PAGES/index.html";
+  } else if (mensaje === "Usuario no registrado") {
+    let opcion = confirm("Usuario no registrado. ¿Querés crear una cuenta?");
+    if (opcion) {
+      registrarUsuario(usuario, contraseña);
+      alert("✅ Usuario registrado, ahora podés ingresar.");
+    } else {
+      alert("❌ No podés ingresar sin una cuenta.");
+    }
+  } else {
+    alert(mensaje); // contraseña incorrecta
+  }
+});
+
+function validarDatos(usuario, contraseña) {
+  let user = usuarios.find((u) => u.user === usuario);
+
+  if (!user) return "Usuario no registrado";
+  if (user.pass !== contraseña) return "Contraseña incorrecta";
+
+  return ""; // todo ok
+}
+
+function registrarUsuario(usuario, contraseña) {
+  usuarios.push({ user: usuario, pass: contraseña });
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
+console.log(usuarios); // para verificar en consola
+// Simulación de menú (para pruebas)
+function mostrarMenu() {
+  alert("👉 Accediste al menú de compras 🛒");
+} */
