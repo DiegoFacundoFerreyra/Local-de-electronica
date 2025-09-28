@@ -136,6 +136,56 @@ footer {
   color: green;
 }
 
+.oculto {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 1s ease, opacity 1s ease;
+}
+
+.activo {
+  max-height: 2000px;
+  opacity: 1;
+  transition: max-height 2s ease, opacity 2s ease;
+}
+
+.toggleMenu {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.menu {
+  position: absolute;
+  top: 60px; /* ajustá según tu header */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.menu a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu a:hover {
+  background-color: #f0f0f0;
+}
+
+.menu.activo {
+  max-height: 500px; /* suficiente para mostrar enlaces */
+  opacity: 1;
+}
+
 @media (min-width: 768px) {
   .whatsapp {
     width: 60px;
@@ -260,7 +310,7 @@ footer {
   }
   .hijos {
     width: 600px;
-    height: 1400px;
+    height: auto;
     padding: 12px;
     justify-content: space-between;
   }
