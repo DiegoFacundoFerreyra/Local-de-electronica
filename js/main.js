@@ -1,4 +1,4 @@
-function mostrarMenu() {
+/* function mostrarMenu() {
   let salir = false;
   let carrito = []; // Guardamos los productos comprados
 
@@ -123,7 +123,7 @@ function mostrarMenu() {
   } else {
     alert("No compró ningún producto.");
   }
-}
+} */
 
 const toggleMenu = document.querySelector(".toggleMenu");
 const menu = document.querySelector(".menu");
@@ -259,3 +259,6 @@ botones.forEach((boton) => {
     boton.style.display = "none";
   });
 });
+
+// Inicia el programa
+mostrarMenu();
